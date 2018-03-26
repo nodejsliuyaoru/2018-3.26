@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+			var arr=[{
+                title:"喜迎两会",
+                content:"两会的召开，是在全面建设小康社会。。。。",
+                comments:[{content:[{name:"我是评论1"},{name:"我是评论1的评论"}]},{content:[{name:"我是评论2"},{name:"我是评论2的评论"}]}]
+            }]
+			for(var i=0;i<arr.length;i++){
+				$('#box').append('<h1>'+arr[i].title+'</h1>')
+				$('#box').append('<h3>'+arr[i].content+'</h3>')
+				for(var j=0;j<arr[i].comments.length;j++){
+					for(var k=0;k<arr[i].comments[j].content.length;k++)
+					$('#box').append('<p>'+arr[i].comments[j].content[k].name+'</p>')
+				}
+			}
+		</script>
+	</body>
+</html>
